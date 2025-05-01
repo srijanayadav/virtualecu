@@ -24,35 +24,35 @@ void SIU_Init(void)
 	/**Input pin configurations **/
 
 	// Switches (SW1 - SW4 on pins D[4] to D[7])
-	SIU.PCR[4].R = 0x0100; // Input, no pull-up/down
-	SIU.PCR[5].R = 0x0100;
-	SIU.PCR[6].R = 0x0100;
-	SIU.PCR[7].R = 0x0100;
+	SIU.PCR[60].R = 0x0100; // Input, no pull-up/down
+	SIU.PCR[62].R = 0x0100;
+	SIU.PCR[52].R = 0x0100;
+	SIU.PCR[54].R = 0x0100;
 
 	// Buttons (BT1 on pin D[12], BT2 on D[14])
-	SIU.PCR[12].R = 0x0100;
-	SIU.PCR[14].R = 0x0100;
+	SIU.PCR[55].R = 0x0100;
+	SIU.PCR[53].R = 0x0100;
 
 	/************************************************************************/
 	/* Output pin configurations */
 
 	// LEDs
-	SIU.PCR[11].R = 0x0200; // U1
-	SIU.PCR[75].R = 0x0200; // U2
-	SIU.PCR[38].R = 0x0200; // U3
-	SIU.PCR[10].R = 0x0200; // Tx
-	SIU.PCR[9].R = 0x0200;	// Rx
-	SIU.PCR[8].R = 0x0200;	// P
+	SIU.PCR[59].R = 0x0200; // U1
+	SIU.PCR[43].R = 0x0200; // U2
+	SIU.PCR[6].R = 0x0200;	// U3
+	SIU.PCR[58].R = 0x0200; // Tx
+	SIU.PCR[57].R = 0x0200; // Rx
+	SIU.PCR[56].R = 0x0200; // P
 	SIU.PCR[7].R = 0x0200;	// Extra LED if needed
 
 	/************************************************************************/
 	/* Analog pin configurations */
 
 	// Potentiometer on ANP5 (ADC0 channel 5)
-	SIU.PCR[55].R = 0x2500; // Analog input
+	SIU.PCR[66].R = 0x2500; // Analog input
 
 	// Light sensor on ANP3 (ADC1 channel 3)
-	SIU.PCR[53].R = 0x2500; // Analog input
+	SIU.PCR[32].R = 0x2500; // Analog input
 
 	/*************************************************************************/
 }

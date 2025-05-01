@@ -16,7 +16,8 @@
 
 // put any global variables you need here
 int counter_value = 0;
-int counter_mode = 1; // 1 = count up, 0 = count down
+int counter_mode = 1;				  // 1 = count up, 0 = count down
+int leds[] = {59, 43, 58, 57, 56, 6}; // U1, U2, Tx, Rx, P,U3
 
 /* Task-1 implementation *****************************************************/
 void task_pot(int x)
@@ -26,8 +27,7 @@ void task_pot(int x)
 
 	/*************************************************************************/
 	int thresholds[] = {682, 1364, 2046, 2728, 3410};
-	int leds[] = {11, 6, 10, 9, 8, 7}; // U1, U2, Tx, Rx, P
-
+	// Define thresholds for each LED
 	for (int i = 0; i < 6; i++)
 	{
 		SIU.GPDO[leds[i]].R = (x >= thresholds[i]) ? 1 : 0;
@@ -54,9 +54,9 @@ void task_counter(void)
 	int u2 = (counter_value >> 1) & 1;
 	int u3 = counter_value & 1;
 
-	SIU.GPDO[11].R = u1; // U1 (D[11])
-	SIU.GPDO[6].R = u2;	 // U2 (C[11])
-	SIU.GPDO[10].R = u3; // U3 (A[6])
+	SIU.GPDO[59].R = u1; // U1 (D[11])
+	SIU.GPDO[43].R = u2; // U2 (C[11])
+	SIU.GPDO[6].R = u3;	 // U3 (A[6])
 
 	/*************************************************************************/
 }
@@ -87,12 +87,12 @@ int main(void)
 		/* System function, do not remove */
 		systemFunction();
 		/* TO-DO: your task implementations **********************************/
-		int sw1 = SIU.GPDI[4].R;
-		int sw2 = SIU.GPDI[5].R;
-		int sw3 = SIU.GPDI[6].R;
-		int sw4 = SIU.GPDI[7].R;
-		int bt1 = SIU.GPDI[12].R;
-		int bt2 = SIU.GPDI[14].R;
+		int sw1 = SIU.GPDI[52].R;
+		int sw2 = SIU.GPDI[53].R;
+		int sw3 = SIU.GPDI[54].R;
+		int sw4 = SIU.GPDI[55].R;
+		int bt1 = SIU.GPDI[60].R;
+		int bt2 = SIU.GPDI[62].R;
 
 		if (bt1)
 			counter_mode = 1;
@@ -116,7 +116,7 @@ int main(void)
 		else
 		{
 			for (int i = 0; i < 6; i++)
-				SIU.GPDO[7 + i].R = 0; // Turn off LEDs
+				SIU.GPDO[leds[i]].R = 0; // Turn off LEDs
 		}
 
 		/*********************************************************************/
