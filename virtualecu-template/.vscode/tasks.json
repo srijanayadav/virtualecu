@@ -4,25 +4,29 @@
     "tasks": [
         {
             "label": "build_vecu_program",
-            "type": "cppbuild",
+            "type": "shell",
             "command": "gcc",
             "args": [
                 "-shared"           ,
                 "-fdiagnostics-color=always",
                 "-g",
                 "-fPIC",
-                "${workspaceFolder}/*.c",
-                "${workspaceFolder}/components/*.c",
-                "${workspaceFolder}/source/*.c",
+                "${config:workspaceFolder}/*.c",
+                "${config:workspaceFolder}/components/*.c",
+                "${config:workspaceFolder}/source/*.c",
                 "-I",
-                "${workspaceFolder}/components",
+                "${config:workspaceFolder}/components",
                 "-I",
-                "${workspaceFolder}/source",
+                "${config:workspaceFolder}/source",
                 "-o",
-                "${workspaceFolder}/bin/Debug/vEcuImpl.bin"
+                "${config:workspaceFolder}/bin/Debug/vEcuImpl.bin"
             ],
             "options": {
-                "cwd": "${config:vecu.build_tools_directory}"
+                "cwd": "${config:vecu.build_tools_directory}",
+                "shell": {
+                    "executable": "C:\\Program Files\\Git\\bin\\bash.exe", // Path to Git Bash
+                    "args": ["-c"]
+                }
             },
             "problemMatcher": [
                 "$gcc"

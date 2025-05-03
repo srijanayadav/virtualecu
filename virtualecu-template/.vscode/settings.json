@@ -6,5 +6,6 @@
         // or you are using a different source for gcc/gdb
         // Linux: set it to "" (i.e. empty)
         "build_tools_directory": "C:/msys64/ucrt64/bin"
-    }
+    },
+    "workspaceFolder" : "C:/Working/Lab/virtualecu/virtualecu-template",
 }
