@@ -7,8 +7,5 @@
         // Linux: set it to "" (i.e. empty)
         "build_tools_directory": "C:/msys64/ucrt64/bin"
     },
-    "workspaceFolder": "C:/Working/Lab/virtualecu/virtualecu-template",
-    "files.associations": {
-        "init.h": "c"
-    },
+    "workspaceFolder" : "C:/Working/Lab/virtualecu/virtualecu-template",
 }

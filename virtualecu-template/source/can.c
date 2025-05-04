@@ -22,11 +22,11 @@ void CAN_Init(void){
 
 	/* TO-DO: pre-configure message buffer(s) for sending here ***********************/
 
-	CAN_0.BUF[8].MSG_CS.B.IDE = 1;		/* Message/frame format: 1 = Extended, 0 = Standard/Base */
+	//CAN_0.BUF[...].MSG_CS.B.IDE = ...;		/* Message/frame format: 1 = Extended, 0 = Standard/Base */
 	//CAN_0.BUF[...].MSG_ID.B.STD_ID = ...;		/* Message ID for standard frame */
-	CAN_0.BUF[8].MSG_ID.B.EXT_ID = 0x12345678;		/* Message ID for extended frame*/
-	CAN_0.BUF[8].MSG_CS.B.RTR = 0;		/* Remote Transmission Request; 0 = Data Frame */
-	CAN_0.BUF[8].CS.B.LENGTH = 8;			/* Length of Payload, 0 - 8*/
+	//CAN_0.BUF[...].MSG_ID.B.EXT_ID = ...;		/* Message ID for extended frame*/
+	//CAN_0.BUF[...].MSG_CS.B.RTR = ...;		/* Remote Transmission Request; 0 = Data Frame */
+	//CAN_0.BUF[...].CS.B.LENGTH = ...;			/* Length of Payload, 0 - 8*/
 
 	/*************************************************************************/
 }

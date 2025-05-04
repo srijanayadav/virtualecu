@@ -5,6 +5,7 @@
 #include "conf.h"
 #include "siu.h"
 #include "pit.h"
+#include "can.h"
 #include "osal.h"
 
 int main();
@@ -15,5 +16,7 @@ void systemFunction(void);
 void PIT_Channel_1(void);
 void PIT_Channel_2(void);
 void PIT_Channel_3(void);
+
+void can_receive(CANRxFrame crfp);
 
 #endif

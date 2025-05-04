@@ -2,7 +2,7 @@
 #ifndef HLE_H
 #define HLE_H
 
-#define HLE_INTERFACE_VERSION "CB63A754-0EB2-4ABB-999F-082BAA16180B"
+#define HLE_INTERFACE_VERSION "AD9ABE01-6C17-478C-8106-6F9D48E4B345"
 
 #ifdef _WIN32
     #include <processthreadsapi.h>
